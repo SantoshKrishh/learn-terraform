@@ -13,3 +13,8 @@ output "test" {
 output "testing" {
     value = var.name
 }
+
+output "sample-extra" {
+    value = "value of sample" - var.sample
+    
+}
