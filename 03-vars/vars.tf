@@ -15,6 +15,13 @@ output "testing" {
 }
 
 output "sample-extra" {
-    value = "value of sample - ${var.sample}"
-    
+    value = "value of sample - ${var.sample}"    
+}
+
+variable "env" {
+  
+}
+
+output "env" {
+  value = var.env
 }
