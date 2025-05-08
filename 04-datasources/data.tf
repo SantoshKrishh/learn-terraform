@@ -18,3 +18,15 @@ data "aws_security_group" "selected" {
 output "securitygroup" {
   value = data.aws_security_group.selected.id
 }
+
+data "aws_ami" "test" {
+  executable_users = ["self"]
+  most_recent      = true
+  name_regex       = "Centos-8-DevOps-Practice"
+  owners           = ["self"]
+}
+
+output "testami" {
+  value = data.aws_ami.amiid.id
+  
+}
