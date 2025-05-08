@@ -12,7 +12,7 @@ output "spot_price" {
   value = data.aws_ec2_spot_price.spotprice
 }
 
-data "aws_ami" "ami_id" {
+data "aws_ami" "amiid" {
   executable_users = ["self"]
   most_recent      = true
   name_regex       = "devops-practice"
@@ -20,6 +20,6 @@ data "aws_ami" "ami_id" {
 }
 
 output "ami_id" {
-  value = data.aws_ami.ami_id.id
+  value = data.aws_ami.amiid.id
   
 }
