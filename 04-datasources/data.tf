@@ -8,7 +8,7 @@ data "aws_ec2_spot_price" "spotprice" {
   }
 }
 
-output "spotprice" {
+output "spprice" {
   value = data.aws_ec2_spot_price.spotprice.spot_price
 }
 
