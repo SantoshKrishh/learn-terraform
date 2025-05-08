@@ -1,3 +1,10 @@
+provider "aws" {
+  region = "us-east-1"
+  
+}
+
+
+
 data "aws_ec2_spot_price" "spotprice" {
   instance_type     = "t3.medium"
   availability_zone = "us-east-1a" 
@@ -18,6 +25,7 @@ data "aws_security_group" "selected" {
 output "securitygroup" {
   value = data.aws_security_group.selected.id
 }
+
 
 data "aws_ami" "test" {
   executable_users = ["self"]
