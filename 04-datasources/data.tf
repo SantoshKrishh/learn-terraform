@@ -11,15 +11,10 @@ data "aws_ec2_spot_price" "spotprice" {
 output "spprice" {
   value = data.aws_ec2_spot_price.spotprice.spot_price
 }
-
-data "aws_ami" "amiid" {
-  executable_users = ["self"]
-  most_recent      = true
-  name_regex       = "devops-practice"
-  owners           = ["self"]
+data "aws_security_group" "selected" {
+  id = "allow-all"
 }
 
-output "ami_id" {
-  value = data.aws_ami.amiid.id
-  
+output "securitygroup" {
+  value = data.aws_security_group.selected.id
 }
