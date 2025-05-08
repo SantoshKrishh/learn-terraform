@@ -8,8 +8,8 @@ data "aws_ec2_spot_price" "spotprice" {
   }
 }
 
-output "spot_price" {
-  value = data.aws_ec2_spot_price.spotprice
+output "spotprice" {
+  value = data.aws_ec2_spot_price.spotprice.spot_price
 }
 
 data "aws_ami" "amiid" {
