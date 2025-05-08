@@ -12,7 +12,7 @@ output "spprice" {
   value = data.aws_ec2_spot_price.spotprice.spot_price
 }
 data "aws_security_group" "selected" {
-  id = "allow-all"
+  name = "allow-all"
 }
 
 output "securitygroup" {
