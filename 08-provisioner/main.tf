@@ -22,7 +22,7 @@ resource "aws_instance" "web" {
         host        = self.public_ip
     }
     inline = [ 
-        "sudo labauto ansible"
+        "sudo labauto ansible",
         "ansible pull localhost -U https://github.com/SantoshKrishh/roboshop-ansible.git roboshop.yml -e env=dev -e role_name=frontend"
     ]
   }
